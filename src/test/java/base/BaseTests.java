@@ -5,10 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 import pages.HomePage;
 
 import java.util.List;
@@ -20,11 +17,19 @@ public class BaseTests {
     public void SetUp() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         webDriver = new ChromeDriver();
+
         // open My website
-        webDriver.get("https://the-internet.herokuapp.com/");
+        goHome();
         homePage = new HomePage(webDriver);
+
         //1 - Maximize the window
         webDriver.manage().window().maximize();
+    }
+
+    @BeforeMethod
+    public void goHome()
+    {
+        webDriver.get("https://the-internet.herokuapp.com/");
     }
 
     @AfterClass
