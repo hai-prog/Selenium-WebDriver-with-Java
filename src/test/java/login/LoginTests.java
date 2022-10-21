@@ -11,7 +11,7 @@ public class LoginTests extends BaseTests {
     @Test
     public void testSuccessfulLogin()
     {
-        LoginPage loginPage = homePage.clickFormAuthentication();
+        var loginPage = homePage.clickFormAuthentication();
         loginPage.setUserName("tomsmith");
         loginPage.setpassword("SuperSecretPassword!");
         SecureAreaPage secureAreaPage= loginPage.clichLoginButton();

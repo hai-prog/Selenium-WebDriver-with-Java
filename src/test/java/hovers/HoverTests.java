@@ -18,6 +18,5 @@ public class HoverTests extends BaseTests {
         assertEquals("title is incorrect", "name: user1" , caption.getTitle() );
         assertEquals("link is incorrect", "https://the-internet.herokuapp.com/users/1" , caption.getLink());
         assertEquals("link text is incorrect", "View profile" , caption.getLinkText());
-        assertTrue("link text is incorrect",caption.getLinkText().endsWith("/users/1"));
     }
 }
